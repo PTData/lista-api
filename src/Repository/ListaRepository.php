@@ -47,7 +47,7 @@ class ListaRepository extends ServiceEntityRepository
         ->andWhere('l.id = :id')
         ->setParameter('id', $list)
         ->getQuery()
-        ->getArrayResult()
+        ->getOneOrNullResult()
         ;
     }
         

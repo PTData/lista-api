@@ -9,6 +9,14 @@ lista:
   path: /list/{id}
   controller: App\Controller\ListaController::list
   
-cenas:
-  path: /cenas
-  controller: App\Controller\ListaController::index
+create:
+  path: /create
+  controller: App\Controller\ListaController::create
+  
+add_product:
+  path: /add/{id}/{produto}
+  controller: App\Controller\ListaController::add
+  
+productos:
+  path: /produtos
+  controller: App\Controller\ProductController::produtos

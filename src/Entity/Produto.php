@@ -24,7 +24,7 @@ class Produto
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="date_update")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="category_id")
      */
     private $category_id;
 
@@ -55,6 +55,11 @@ class Produto
         return $this;
     }
 
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+    
     public function getCategoryId(): ?Category
     {
         return $this->category_id;

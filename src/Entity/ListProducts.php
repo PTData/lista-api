@@ -33,6 +33,11 @@ class ListProducts
      */
     private $lista;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $unidades;
+
     public function __construct()
     {
         $this->list = new ArrayCollection();
@@ -94,6 +99,18 @@ class ListProducts
     public function setLista(?Lista $lista): self
     {
         $this->lista = $lista;
+
+        return $this;
+    }
+
+    public function getUnidades(): ?int
+    {
+        return $this->unidades;
+    }
+
+    public function setUnidades(?int $unidades): self
+    {
+        $this->unidades = $unidades;
 
         return $this;
     }

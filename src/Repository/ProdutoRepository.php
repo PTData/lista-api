@@ -18,6 +18,19 @@ class ProdutoRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Produto::class);
     }
+    
+    public function allWithCategory() 
+    {
+        $qb = $this->createQueryBuilder('p')
+        ->innerJoin('p.category_id', 'c')
+        //->addSelect('c')
+        //->andWhere('p.price > :price')
+        //->setParameter('price', $price)
+        //->orderBy('p.price', 'ASC')
+        ->getQuery();
+        
+        return $qb->getResult();
+    }
 
 //    /**
 //     * @return Produto[] Returns an array of Produto objects
